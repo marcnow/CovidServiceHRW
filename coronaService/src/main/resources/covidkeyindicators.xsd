@@ -1,0 +1,33 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		   xmlns:tns= "coronaservice-grp6"
+		   targetNamespace="coronaservice-grp6"
+		   elementFormDefault="qualified">
+
+	<xs:element name="getCovidKeyIndicatorsRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="days" type="xs:int"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="getCovidKeyIndicatorsResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="covidKeyIndicators" type="tns:covidKeyIndicators"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>	
+	
+	<xs:complexType name="covidKeyIndicators">
+		<xs:sequence>
+			<xs:element name="newInfections" type="xs:int"/>
+			<xs:element name="totalInfections" type="xs:int"/>
+			<xs:element name="infectionRise" type="xs:int"/>
+			<xs:element name="averageInfectionRise" type="xs:float"/>
+			<xs:element name="incidenceValue" type="xs:float"/>
+			<xs:element name="targetTotalInfections" type="xs:float"/>
+			<xs:element name="daysOfLockdown" type="xs:float"/>
+		</xs:sequence>
+	</xs:complexType>	
+</xs:schema>
